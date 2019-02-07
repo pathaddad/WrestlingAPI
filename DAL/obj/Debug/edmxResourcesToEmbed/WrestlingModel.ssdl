@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WrestlingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tag" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CompanyDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LanguageCode" Type="char" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contract">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WrestlerId" Type="int" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="IsExclusive" Type="bit" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Show">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="Tag" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ShowDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShowId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LongDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ShowInstance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ShowId" Type="int" Nullable="false" />
+    <Property Name="Tag" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShowDate" Type="datetime" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ShowInstanceDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShowInstanceId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LongDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Wrestler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DebutDate" Type="datetime" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="WrestlerDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WrestlerId" Type="int" Nullable="false" />
+    <Property Name="WrestlingName" Type="nvarchar" MaxLength="100" />
+    <Property Name="RealName" Type="nvarchar" MaxLength="100" />
+    <Property Name="BilledFrom" Type="nvarchar" MaxLength="100" />
+    <Property Name="HomeTown" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_CompanyDetails_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="CompanyDetails" Type="Self.CompanyDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompanyDetails">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contract_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contract_Wrestler">
+    <End Role="Wrestler" Type="Self.Wrestler" Multiplicity="1" />
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Wrestler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="WrestlerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Show_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Show" Type="Self.Show" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Show">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShowDetails_Show">
+    <End Role="Show" Type="Self.Show" Multiplicity="1" />
+    <End Role="ShowDetails" Type="Self.ShowDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Show">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShowDetails">
+        <PropertyRef Name="ShowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShowInstance_Show">
+    <End Role="Show" Type="Self.Show" Multiplicity="1" />
+    <End Role="ShowInstance" Type="Self.ShowInstance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Show">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShowInstance">
+        <PropertyRef Name="ShowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShowInstanceDetails_ShowInstance">
+    <End Role="ShowInstance" Type="Self.ShowInstance" Multiplicity="1" />
+    <End Role="ShowInstanceDetails" Type="Self.ShowInstanceDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShowInstance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShowInstanceDetails">
+        <PropertyRef Name="ShowInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WrestlerDetails_Wrestler">
+    <End Role="Wrestler" Type="Self.Wrestler" Multiplicity="1" />
+    <End Role="WrestlerDetails" Type="Self.WrestlerDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Wrestler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WrestlerDetails">
+        <PropertyRef Name="WrestlerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WrestlingModelStoreContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="Wrestling" store:Type="Tables" />
+    <EntitySet Name="CompanyDetails" EntityType="Self.CompanyDetails" Schema="Wrestling" store:Type="Tables" />
+    <EntitySet Name="Contract" EntityType="Self.Contract" Schema="Wrestling" store:Type="Tables" />
+    <EntitySet Name="Show" EntityType="Self.Show" Schema="Wrestling" store:Type="Tables" />
+    <EntitySet Name="ShowDetails" EntityType="Self.ShowDetails" Schema="Wrestling" store:Type="Tables" />
+    <EntitySet Name="ShowInstance" EntityType="Self.ShowInstance" Schema="Wrestling" store:Type="Tables" />
+    <EntitySet Name="ShowInstanceDetails" EntityType="Self.ShowInstanceDetails" Schema="Wrestling" store:Type="Tables" />
+    <EntitySet Name="Wrestler" EntityType="Self.Wrestler" Schema="Wrestling" store:Type="Tables" />
+    <EntitySet Name="WrestlerDetails" EntityType="Self.WrestlerDetails" Schema="Wrestling" store:Type="Tables" />
+    <AssociationSet Name="FK_CompanyDetails_Company" Association="Self.FK_CompanyDetails_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompanyDetails" EntitySet="CompanyDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contract_Company" Association="Self.FK_Contract_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contract_Wrestler" Association="Self.FK_Contract_Wrestler">
+      <End Role="Wrestler" EntitySet="Wrestler" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Show_Company" Association="Self.FK_Show_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Show" EntitySet="Show" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShowDetails_Show" Association="Self.FK_ShowDetails_Show">
+      <End Role="Show" EntitySet="Show" />
+      <End Role="ShowDetails" EntitySet="ShowDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShowInstance_Show" Association="Self.FK_ShowInstance_Show">
+      <End Role="Show" EntitySet="Show" />
+      <End Role="ShowInstance" EntitySet="ShowInstance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShowInstanceDetails_ShowInstance" Association="Self.FK_ShowInstanceDetails_ShowInstance">
+      <End Role="ShowInstance" EntitySet="ShowInstance" />
+      <End Role="ShowInstanceDetails" EntitySet="ShowInstanceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WrestlerDetails_Wrestler" Association="Self.FK_WrestlerDetails_Wrestler">
+      <End Role="Wrestler" EntitySet="Wrestler" />
+      <End Role="WrestlerDetails" EntitySet="WrestlerDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

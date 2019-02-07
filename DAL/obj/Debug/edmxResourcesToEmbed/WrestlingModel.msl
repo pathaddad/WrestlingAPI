@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WrestlingModelStoreContainer" CdmEntityContainer="WrestlingEntities">
+    <EntitySetMapping Name="Company">
+      <EntityTypeMapping TypeName="WrestlingModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyDetails">
+      <EntityTypeMapping TypeName="WrestlingModel.CompanyDetails">
+        <MappingFragment StoreEntitySet="CompanyDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contract">
+      <EntityTypeMapping TypeName="WrestlingModel.Contract">
+        <MappingFragment StoreEntitySet="Contract">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WrestlerId" ColumnName="WrestlerId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="IsExclusive" ColumnName="IsExclusive" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Show">
+      <EntityTypeMapping TypeName="WrestlingModel.Show">
+        <MappingFragment StoreEntitySet="Show">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShowDetails">
+      <EntityTypeMapping TypeName="WrestlingModel.ShowDetails">
+        <MappingFragment StoreEntitySet="ShowDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ShowId" ColumnName="ShowId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LongDescription" ColumnName="LongDescription" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShowInstance">
+      <EntityTypeMapping TypeName="WrestlingModel.ShowInstance">
+        <MappingFragment StoreEntitySet="ShowInstance">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ShowId" ColumnName="ShowId" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="ShowDate" ColumnName="ShowDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShowInstanceDetails">
+      <EntityTypeMapping TypeName="WrestlingModel.ShowInstanceDetails">
+        <MappingFragment StoreEntitySet="ShowInstanceDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ShowInstanceId" ColumnName="ShowInstanceId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="LongDescription" ColumnName="LongDescription" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wrestler">
+      <EntityTypeMapping TypeName="WrestlingModel.Wrestler">
+        <MappingFragment StoreEntitySet="Wrestler">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DebutDate" ColumnName="DebutDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WrestlerDetails">
+      <EntityTypeMapping TypeName="WrestlingModel.WrestlerDetails">
+        <MappingFragment StoreEntitySet="WrestlerDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WrestlerId" ColumnName="WrestlerId" />
+          <ScalarProperty Name="WrestlingName" ColumnName="WrestlingName" />
+          <ScalarProperty Name="RealName" ColumnName="RealName" />
+          <ScalarProperty Name="BilledFrom" ColumnName="BilledFrom" />
+          <ScalarProperty Name="HomeTown" ColumnName="HomeTown" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

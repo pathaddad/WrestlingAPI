@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="95cc7505d21c439093173599cb0ca322" Name="Diagram1">
+        <EntityTypeShape EntityType="WrestlingModel.Company" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrestlingModel.Contract" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrestlingModel.Show" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrestlingModel.ShowInstance" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrestlingModel.Wrestler" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <AssociationConnector Association="WrestlingModel.FK_Contract_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="WrestlingModel.FK_Show_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="WrestlingModel.FK_Contract_Wrestler" ManuallyRouted="false" />
+        <AssociationConnector Association="WrestlingModel.FK_ShowInstance_Show" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WrestlingModel.CompanyDetails" Width="1.5" PointX="3" PointY="3.25" />
+        <EntityTypeShape EntityType="WrestlingModel.ShowDetails" Width="1.5" PointX="5.25" PointY="8.625" />
+        <EntityTypeShape EntityType="WrestlingModel.ShowInstanceDetails" Width="1.5" PointX="7.5" PointY="12.625" />
+        <EntityTypeShape EntityType="WrestlingModel.WrestlerDetails" Width="1.5" PointX="3" PointY="15" />
+        <AssociationConnector Association="WrestlingModel.FK_CompanyDetails_Company" />
+        <AssociationConnector Association="WrestlingModel.FK_ShowDetails_Show" />
+        <AssociationConnector Association="WrestlingModel.FK_ShowInstanceDetails_ShowInstance" />
+        <AssociationConnector Association="WrestlingModel.FK_WrestlerDetails_Wrestler" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

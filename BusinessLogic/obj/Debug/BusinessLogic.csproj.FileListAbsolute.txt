@@ -1,0 +1,14 @@
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\bin\Debug\DAL.dll
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\bin\Debug\log4net.dll
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\bin\Debug\DAL.pdb
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\bin\Debug\DAL.dll.config
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\bin\Debug\log4net.xml
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Toshiba\source\repos\Wrestling\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
