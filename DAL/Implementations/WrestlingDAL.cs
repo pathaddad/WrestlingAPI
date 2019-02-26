@@ -157,5 +157,21 @@ namespace DAL.Implementations
             _unitOfWork.Commit();
             return true;
         }
+
+        public bool AddWrestlerContracts(int wrestlerId, List<Contract> contracts)
+        {
+            var wrestler = _repositoryWrestler.Find(w => w.Id == wrestlerId, w => w.Contract).FirstOrDefault();
+            if (wrestler == null)
+                return false;
+            foreach (var c in contracts)
+            {
+                c.CreationDate = DateTime.UtcNow;
+                wrestler.Contract.Add(c);
+            }
+            _unitOfWork.Commit();
+            return true;
+        }
+
     }
 }
+

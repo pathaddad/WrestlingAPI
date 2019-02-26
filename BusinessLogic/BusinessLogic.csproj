@@ -45,7 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\CommonPack.cs" />
+    <Compile Include="Entities\CreateWrestlerRequestItem.cs" />
     <Compile Include="Entities\Wrestler.cs" />
+    <Compile Include="Entities\WrestlerContract.cs" />
+    <Compile Include="Entities\WrestlerDetails.cs" />
     <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Helpers\Logger.cs" />
     <Compile Include="ServiceLocator.cs" />

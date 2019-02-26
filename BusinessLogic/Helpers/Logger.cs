@@ -30,13 +30,14 @@ namespace BusinessLogic.Helpers
                 );
         }
 
-        public void Info(string message, string requestToken = null, string sfmTag = null)
+        public void Info(string message, string requestToken = null, string sfmTag = null, DateTime? startDate = null, DateTime? endDate = null)
         {
             StackTrace stackTrace = new StackTrace();
             var callerName = stackTrace.GetFrame(1)?.GetMethod()?.Name;
             Log.Info("[" + callerName + "]"
                 + (!string.IsNullOrWhiteSpace(requestToken) ? "[" + requestToken + "]" : string.Empty)
                 + (!string.IsNullOrWhiteSpace(sfmTag) ? ", SFM Tag: " + sfmTag + ", " : string.Empty)
+                +(startDate.HasValue && endDate.HasValue ? ", call duration: " + (endDate - startDate) + ", " : string.Empty)
                 + message);
         }
 

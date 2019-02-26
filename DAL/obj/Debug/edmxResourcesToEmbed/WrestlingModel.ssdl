@@ -15,8 +15,8 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CompanyId" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="LanguageCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Contract">
     <Key>
@@ -47,6 +47,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ShowId" Type="int" Nullable="false" />
+    <Property Name="LanguageCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="LongDescription" Type="nvarchar" MaxLength="500" />
     <Property Name="ShortDescription" Type="nvarchar" MaxLength="100" />
@@ -68,6 +69,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ShowInstanceId" Type="int" Nullable="false" />
+    <Property Name="LanguageCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="LongDescription" Type="nvarchar" MaxLength="500" />
@@ -88,6 +90,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="WrestlerId" Type="int" Nullable="false" />
+    <Property Name="LanguageCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="WrestlingName" Type="nvarchar" MaxLength="100" />
     <Property Name="RealName" Type="nvarchar" MaxLength="100" />
     <Property Name="BilledFrom" Type="nvarchar" MaxLength="100" />

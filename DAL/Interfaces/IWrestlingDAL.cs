@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -18,5 +19,6 @@ namespace DAL
         bool UpdateShow(Show s);
         bool UpdateShowInstance(ShowInstance s);
         bool UpdateWrestler(Wrestler w);
+        bool AddWrestlerContracts(int wrestlerId, List<Contract> contracts);
     }
 }
